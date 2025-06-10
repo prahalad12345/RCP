@@ -57,7 +57,7 @@ curl -X POST http://localhost:8000/runs \
   -H "Content-Type: application/json" \
   -d '{
         "agent_name": "echo",
-        "input": [{"role": "user", "parts": [{"content": "Hello"}]}],
+        "input": [{"parts": [{"content": "Hello"}]}],
         "mode": "sync"
       }'
 ```
@@ -67,10 +67,7 @@ curl -X POST http://localhost:8000/runs \
   "agent_name": "echo",
   "status": "completed",
   "output": [
-    { 
-      "role": "agent/echo",
-      "parts": [{ "content_type": "text/plain", "content": "Hello" }] 
-    }
+    { "parts": [{ "content_type": "text/plain", "content": "Hello" }] }
   ]
 }
 ```
@@ -109,7 +106,7 @@ curl -X POST http://localhost:8000/runs \
   -H "Content-Type: application/json" \
   -d '{
         "agent_name": "echo",
-        "input": [{"role": "user", "parts": [{"content": "Hello"}]}],
+        "input": [{"parts": [{"content": "Hello"}]}],
         "mode": "async"
       }'
 ```
@@ -162,7 +159,7 @@ curl -N -H "Accept: text/event-stream" -X POST http://localhost:8000/runs \
   -H "Content-Type: application/json" \
   -d '{
         "agent_name": "echo",
-        "input": [{"role": "user", "parts": [{"content": "Hello"}]}],
+        "input": [{"parts": [{"content": "Hello"}]}],
         "mode": "stream"
       }'
 ```
