@@ -27,6 +27,18 @@ ACP enables agents to:
 - Collaborate on long-running tasks
 - Share state with each other when needed
 
+ACP powers agent communication on the [BeeAI Platform](https://github.com/i-am-bee/beeai-platform) — a place where you can discover, run, and share agents.
+
+## Learn ACP
+
+Take the hands-on introduction to ACP in this [DeepLearning.AI short course](https://www.deeplearning.ai/short-courses/acp-agent-communication-protocol/):
+
+<div align="center">
+<a href="https://www.deeplearning.ai/short-courses/acp-agent-communication-protocol/">
+  <img src="docs/images/deeplearning-ai-cover.png" alt="Deep Learning AI Course" width="500">
+</a>
+</div>
+
 ## What's New
 
 - **🌐 [Distributed Sessions](https://agentcommunicationprotocol.dev/core-concepts/distributed-sessions)** - Session continuity across multiple server instances using URI-based resource sharing
