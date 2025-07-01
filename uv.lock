@@ -25,7 +25,7 @@ dev = [
 
 [[package]]
 name = "acp-sdk"
-version = "0.13.0"
+version = "1.0.0"
 source = { editable = "python" }
 dependencies = [
     { name = "cachetools" },
