@@ -167,7 +167,7 @@ async def run_async():
         print("Run ID:", run.run_id)
 
         # Later, retrieve results
-        result = await client.get_run(run.run_id)
+        result = await client.run_status(run_id=run.run_id)
         print(result)
 
 if __name__ == "__main__":
