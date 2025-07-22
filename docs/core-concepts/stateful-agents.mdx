@@ -3,13 +3,13 @@ title: Stateful Agents
 description: "Learn how to leverage sessions to maintain state across multiple agent runs"
 ---
 
-Stateful agents maintain conversational history across interactions using session IDs. When no `session_id` is provided in a run request, the ACP server automatically generates one and includes it in the run response. If a `session_id` is supplied as input, that same ID is returned with the run response.
+Stateful agents maintain conversational history and state across interactions using sessions.
 
-The ACP SDK leverages this concept by maintaining the full conversation history for each `session_id`. This allows agents to access the complete history of interactions within a session, provided that the same `session_id` is used consistently across runs.
+The ACP SDK leverages this concept by maintaining a descriptor for each session and storing its contents at resource servers. This allows agents to access the complete history of interactions within a session, provided that the same session is used consistently across runs.
 
 ### ACP Client Sessions
 
-The ACP SDK provides a convenient way to maintain session state through the `session()` context manager. When using a session, the SDK automatically handles session ID management, ensuring that all runs within the session share the same ID.
+The ACP SDK provides a convenient way to maintain session through the `session()` context manager. When using a session, the SDK automatically handles session ID management, ensuring that all runs within the session share the same ID.
 
 This makes it easy to build stateful conversations where agents can reference previous interactions:
 
@@ -24,11 +24,17 @@ async with Client(base_url="http://localhost:8000") as client, client.session() 
 
 ### ACP Server sessions
 
-When building ACP agent, the `input` argument will contain the full session history from all the previous runs in the same session. `context.session_id` holds the session id, allowing agents to store additional session-related data.
+When building ACP agent, the `context` argument contains a session instance containing session's ID, history and latest state from all the previous runs in the same session.
 
 ```python stateful_agent.py
 @server.agent()
 async def stateful_agent(input: list[Message], context: Context) -> AsyncGenerator[RunYield, RunYieldResume]:
-    ... # `input` has the full history, `context.session_id` can be used to reference extra data
+    history = [message async for message in context.session.load_history()]
+    large_state = await context.session.load_state()
+    # run agent
+    #   mutate part of the state
+    #   yield messages ...
+    context.session.state = await context.session.store_state(large_state)
+    # history is updated automatically by the SDK based on yields
 ```
 
