@@ -36,3 +36,7 @@ backend = "aqua:astral-sh/uv"
 
 [tools.uv.checksums]
 "uv-aarch64-apple-darwin.tar.gz" = "sha256:fab8db5b62da1e945524b8d1a9d4946fcc6d9b77ec0cab423d953e82159967ac"
+
+[tools.yq]
+version = "4.46.1"
+backend = "aqua:mikefarah/yq"
