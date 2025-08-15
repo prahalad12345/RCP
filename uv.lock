@@ -25,7 +25,7 @@ dev = [
 
 [[package]]
 name = "acp-sdk"
-version = "1.0.1"
+version = "1.0.2"
 source = { editable = "python" }
 dependencies = [
     { name = "async-lru" },
