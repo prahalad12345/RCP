@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.11, <4.0"
 resolution-markers = [
     "python_full_version >= '3.13'",
@@ -9,6 +9,7 @@ resolution-markers = [
 [manifest]
 members = [
     "acp-sdk",
+    "my-acp-project",
 ]
 
 [manifest.dependency-groups]
@@ -743,6 +744,17 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/e9/1b/fa8a952be252a1555ed39f97c06778e3aeb9123aa4cccc0fd2acd0b4e315/msgpack-1.1.0-cp313-cp313-win32.whl", hash = "sha256:7c9a35ce2c2573bada929e0b7b3576de647b0defbd25f5139dcdaba0ae35a4cc", size = 69037, upload-time = "2024-09-10T04:24:52.798Z" },
     { url = "https://files.pythonhosted.org/packages/b6/bc/8bd826dd03e022153bfa1766dcdec4976d6c818865ed54223d71f07862b3/msgpack-1.1.0-cp313-cp313-win_amd64.whl", hash = "sha256:bce7d9e614a04d0883af0b3d4d501171fbfca038f12c77fa838d9f198147a23f", size = 75140, upload-time = "2024-09-10T04:24:31.288Z" },
 ]
+
+[[package]]
+name = "my-acp-project"
+version = "0.1.0"
+source = { virtual = "python/my_acp_project" }
+dependencies = [
+    { name = "acp-sdk" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "acp-sdk", specifier = ">=1.0.3" }]
 
 [[package]]
 name = "natsort"

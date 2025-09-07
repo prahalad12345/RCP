@@ -1,6 +1,8 @@
 <h1 align="center">
-  Agent Communication Protocol (ACP)
+RCP
 </h1>
+
+
 
 <div align="center">
 
@@ -22,70 +24,9 @@
 
 ## 🚀 IMPORTANT UPDATE
 
-**ACP is now part of A2A under the Linux Foundation!**  
-<br>
-👉 [Learn more](https://github.com/orgs/i-am-bee/discussions/5) | 🛠️ [Migration Guide](https://github.com/i-am-bee/beeai-platform/blob/main/docs/community-and-support/acp-a2a-migration-guide.mdx)
+The Installation is similar to ACP. It is meant to support websocket communication between two systems. The application here is solely to control a robot stuck at ROS1 and the hardware is poor or restricted that it ain't allowin for ROS2.
 
----------------------------
-
-</div>
-</div>
-
-
-**ACP is an open protocol for communication between AI agents, applications, and humans.**
-
-Modern AI agents are often built in isolation, across different frameworks, teams, and infrastructures.
-This fragmentation slows innovation and makes it harder for agents to work together effectively.
-ACP solves this by enabling agents to communicate and coordinate using multimodal messages.
-
-ACP enables agents to:
-- Send and receive rich messages — like text, code, files, or media
-- Respond in real time, in the background, or as a stream
-- Let others discover what they can do
-- Collaborate on long-running tasks
-- Share state with each other when needed
-
-ACP powers agent communication on the [BeeAI Platform](https://github.com/i-am-bee/beeai-platform) — a place where you can discover, run, and share agents.
-
-## Learn ACP
-
-Take the hands-on introduction to ACP in this [DeepLearning.AI short course](https://www.deeplearning.ai/short-courses/acp-agent-communication-protocol/):
-
-<div align="center">
-<a href="https://www.deeplearning.ai/short-courses/acp-agent-communication-protocol/">
-  <img src="docs/images/deeplearning-ai-cover.png" alt="Deep Learning AI Course" width="500">
-</a>
-</div>
-
-## What's New
-
-- **🧭 [Trajectory Metadata](https://agentcommunicationprotocol.dev/core-concepts/message-metadata#trajectory-metadata)** - Enhanced MessagePart with TrajectoryMetadata for tracking multi-step reasoning and tool calling
-- **🌐 [Distributed Sessions](https://agentcommunicationprotocol.dev/core-concepts/distributed-sessions)** - Session continuity across multiple server instances using URI-based resource sharing
-- **🔍 [RAG LlamaIndex Agent](https://github.com/i-am-bee/acp/tree/main/examples/python/llama-index-rag)** - New example agent demonstrating Retrieval-Augmented Generation with LlamaIndex
-- **📚 [Citation Metadata](https://agentcommunicationprotocol.dev/core-concepts/message-metadata#citation-metadata)** - Enhanced MessagePart with CitationMetadata for improved source tracking and attribution
-- **⚡ [High Availability Support](https://agentcommunicationprotocol.dev/how-to/high-availability)** - Deploy ACP servers with centralized storage (Redis/PostgreSQL) for scalable, fault-tolerant setups
-- **📝 [Message Role Parameter](https://agentcommunicationprotocol.dev/core-concepts/message-structure)** - Added `role` parameter to Message structure for better agent identification
-- **🔄 [TypeScript SDK (Client)](https://github.com/i-am-bee/acp/tree/main/typescript)** - Full TypeScript client library for interacting with ACP agents
-
-## ACP Toolkit
-
-- **📚 [Documentation](https://agentcommunicationprotocol.dev)**. Comprehensive guides and reference material for implementing and using ACP.
-- **📝 [OpenAPI Specification](https://github.com/i-am-bee/acp/blob/main/docs/spec/openapi.yaml).** Defines the REST API endpoints, request/response formats, and data models to form the ACP protocol.
-- **🛠️ [Python SDK](https://github.com/i-am-bee/acp/blob/main/python).** Contains a server implementation, client libraries, and model definitions to easily create and interact with ACP agents.
-- **🛠️ [TypeScript SDK](https://github.com/i-am-bee/acp/blob/main/typescript).** Contains client libraries and model definitions to easily interact with ACP agents.
-- **💻 [Examples](https://github.com/i-am-bee/acp/tree/main/examples).** Ready-to-run code samples demonstrating how to build agents and clients that communicate using ACP.
-
-## Core Concepts
-
-| **Concept**      | **Description**  |
-| ---------------- | -------------------------------------------------------------------------------------------- |
-| **[Agent Manifest](https://agentcommunicationprotocol.dev/core-concepts/agent-manifest)** | A model describing an agent's capabilities—its name, description, and optional metadata and status—for discovery and composition without exposing implementation details. |
-| **[Run](https://agentcommunicationprotocol.dev/core-concepts/agent-run-lifecycle)** | A single agent execution with specific inputs. Supports sync or streaming, with intermediate and final output. |
-| **[Message](https://agentcommunicationprotocol.dev/core-concepts/message-structure)** | The core structure for communication, consisting of a sequence of ordered components that form a complete, structured, and multi-modal exchange of information. |
-| **[MessagePart](https://agentcommunicationprotocol.dev/core-concepts/message-structure)**  | The individual content units within a `Message`, which can include types like text, image, or JSON. Together, they combine to create structured, multimodal communication. |
-| **[Await](https://agentcommunicationprotocol.dev/core-concepts/agent-run-lifecycle#agent-run-await)**  | Let agents pause to request information from the client and resume, enabling interactive exchanges where the agent can wait for external input (data, actions, etc.) before continuing. |
-| **[Sessions](https://agentcommunicationprotocol.dev/core-concepts/stateful-agents)**  | Enable agents to maintain state and conversation history across multiple interactions using session identifiers. The SDK automatically manages session state, allowing agents to access complete interaction history within a session. |
----
+WebSocket communication or Socket communication is a way to assess the issue. 
 
 ## Quickstart
 
