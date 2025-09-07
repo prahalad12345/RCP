@@ -1,11 +1,8 @@
-# Copyright 2025 © BeeAI a Series of LF Projects, LLC
-# SPDX-License-Identifier: Apache-2.0
-
 import logging
 
 from uvicorn.logging import DefaultFormatter
 
-logger = logging.getLogger("acp")
+logger = logging.getLogger("rcp")
 
 
 def configure_logger() -> None:
@@ -16,4 +13,4 @@ def configure_logger() -> None:
     handler.setFormatter(DefaultFormatter(fmt="%(levelprefix)s %(message)s"))
 
     root_logger.addHandler(handler)
-    root_logger.setLevel(logging.INFO)
+    root_logger.setLevel(logging.DEBUG)

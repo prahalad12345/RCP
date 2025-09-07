@@ -5,6 +5,13 @@ from acp_sdk.client.types import Input
 from acp_sdk.models.models import Message, MessagePart
 
 
+# Copyright 2025 © BeeAI a Series of LF Projects, LLC
+# SPDX-License-Identifier: Apache-2.0
+
+from acp_sdk.client.types import Input
+from acp_sdk.models.models import Message, MessagePart
+
+
 def input_to_messages(input: Input) -> list[Message]:
     if isinstance(input, list):
         if len(input) == 0:
@@ -25,3 +32,6 @@ def input_to_messages(input: Input) -> list[Message]:
         if isinstance(input, Message):
             input = [input]
         return input
+
+if __name__=="__main__":
+    print(input_to_messages("Hello"))
